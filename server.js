@@ -1,3 +1,5 @@
+require('dotenv').config();   // Process ENV variables
+
 const express = require('express'),
   morgan = require('morgan'), 
   app = express();
