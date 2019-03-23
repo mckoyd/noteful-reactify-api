@@ -1,11 +1,9 @@
 require('dotenv').config();   // Process ENV variables
 
-const express = require('express'),
-  morgan = require('morgan'), 
-  app = express();
+const express = require('express');
+const app = express();
+const port = 5000;
 
-app.use(morgan(process.env.NODE_ENV === 'development' ? 'dev' : 'common'), {
-  skip(){
-    return process.env.NODE_ENV === 'test'
-  }
-});
+app.get('/', (req, res) => res.send('Hello finally'));
+
+app.listen(port, () => console.log('Example working?'))
